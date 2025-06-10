@@ -90,6 +90,31 @@ let extensiones = [
 
 
 //Utilizando Buenas practicas
+// function generadorDeDominios() {
+//   let dominios = [];
+
+//   pronombres.forEach(pron => {
+//     adjetivos.forEach(adj => {
+//       sustantivos.forEach(sus => {
+//         extensiones.forEach(ext => {
+//           if (sus.endsWith(ext)) {
+//             const susHack = sus.slice(0, -ext.length);
+//             dominios.push(`${pron}${adj}${susHack}.${ext}`);
+//           } else {
+//             dominios.push(`${pron}${adj}${sus}.${ext}`);
+//           }
+//         });
+//       });
+//     });
+//   });
+
+//   return dominios;
+// }
+
+// const dominiosGenerados = generadorDeDominios();
+// console.log(dominiosGenerados);
+
+
 function generadorDeDominios() {
   let dominios = [];
 
@@ -97,12 +122,7 @@ function generadorDeDominios() {
     adjetivos.forEach(adj => {
       sustantivos.forEach(sus => {
         extensiones.forEach(ext => {
-          if (sus.endsWith(ext)) {
-            const susHack = sus.slice(0, -ext.length);
-            dominios.push(`${pron}${adj}${susHack}.${ext}`);
-          } else {
-            dominios.push(`${pron}${adj}${sus}.${ext}`);
-          }
+          dominios.push(`${pron}${adj}${sus}.${ext}`);
         });
       });
     });
